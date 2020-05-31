@@ -1,0 +1,25 @@
+{% extends 'MainApp/base.html' %}
+{% block title %} Магазины {% endblock %}
+{% block content %}
+<p>Магазины</p>
+<table>
+        <tr>
+            <th>Код магазина</th>
+            <th>Название</th>
+            <th>Улица</th>
+            <th>Дом</th>
+            <th>Время открытия</th>
+            <th>Время закрытия</th>
+        </tr>
+        {% for shop in shops %}
+        <tr>
+            <td>{{ shop.id }}</td>
+            <td>{{ shop.name }}</td>
+            <td>{{ shop.street.name }}</td>
+            <td>{{ shop.house }}</td>
+            <td>{{ shop.time_to_open }}</td>
+            <td>{{ shop.time_to_close }}</td>
+        </tr>
+        {% endfor %}
+</table>
+{% endblock %}

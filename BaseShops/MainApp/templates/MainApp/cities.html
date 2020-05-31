@@ -1,0 +1,16 @@
+{% extends 'MainApp/base.html' %}
+{% block title %} Города {% endblock %}
+{% block content %}
+<table>
+        <tr>
+            <th>Id</th>
+            <th>Название</th>
+        </tr>
+        {% for City in city %}
+        <tr>
+            <td>{{ City.id }}</td>
+            <td>{{ City.name }}</td>
+        </tr>
+        {% endfor %}
+</table>
+{% endblock %}

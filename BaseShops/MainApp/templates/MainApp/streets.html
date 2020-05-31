@@ -1,0 +1,18 @@
+{% extends 'MainApp/base.html' %}
+{% block title %} Улицы {% endblock %}
+{% block content %}
+<table>
+        <tr>
+            <th>Код улицы</th>
+            <th>Название</th>
+            <th>Город</th>
+        </tr>
+        {% for Street in street %}
+        <tr>
+            <td>{{ Street.id }}</td>
+            <td>{{ Street.name }}</td>
+            <td>{{ Street.city.name }}</td>
+        </tr>
+        {% endfor %}
+</table>
+{% endblock %}
