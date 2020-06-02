@@ -1,5 +1,6 @@
 from django.db import models
 from streets.models import *
+from city.models import City
 
 
 class Shop(models.Model):
