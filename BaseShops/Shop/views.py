@@ -17,7 +17,7 @@ def ViewShops(request):
             shops = Shop()
             shops.id = count+1
             shops.name = d['name']
-            shops.street = d['street']
+            shops.Streets = d['street']
             shops.house = d['house']
             shops.time_to_open = d['time_to_open']
             shops.time_to_close = d['time_to_close']
