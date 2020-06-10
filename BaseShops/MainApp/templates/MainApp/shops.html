@@ -1,23 +1,27 @@
 {% extends 'MainApp/base.html' %}
 {% block title %} Магазины {% endblock %}
 {% block content %}
-<form action="" method="POST" >
+<form action="" method="GET">
     {% csrf_token %}
     <h3>Магазины</h3>
     <table>
         {{ ShopForm }}
     </table>
-    <input type="submit" value="Добавить" name="add">
     <input type="submit" value="Поиск" name="search">
 </form>
-
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Добавить" name="add">
+    </form>
+{% load tz %}
+{% localtime on %}
+  Время сервера  {{ servtime }}
+{% endlocaltime %}
 <table>
         <tr>
             <th>Код магазина</th>
             <th>Название</th>
-            <th>Код города</th>
             <th>Город</th>
-            <th>Код улицы</th>
             <th>Улица</th>
             <th>Дом</th>
             <th>Время открытия</th>
@@ -28,17 +32,15 @@
         <tr>
             <td>{{ shop.id }}</td>
             <td>{{ shop.name }}</td>
-            <td>{{ shop.street.city.id }}</td>
             <td>{{ shop.street.city.name }}</td>
-            <td>{{ shop.street.id }}</td>
             <td>{{ shop.street.name }}</td>
             <td>{{ shop.house }}</td>
             <td>{{ shop.time_to_open }}</td>
             <td>{{ shop.time_to_close }}</td>
-            {% if 'shop.time_to_open' > "P" < 'shop.time_to_close' %}
-            <td>1</td>
+            {% if shop.time_to_open < servtime and servtime < shop.time_to_close %}
+            <td> {{ 1 }} </td>
             {% else %}
-            <td>0</td>
+            <td> {{ 0 }} </td>
             {% endif %}
         </tr>
         {% endfor %}
