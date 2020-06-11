@@ -7,7 +7,7 @@ import json
 import datetime
 
 
-def ViewShops(request):
+def ViewShops(request) -> render:
     global Status
     shops = Shop.objects.all()
     shopform = ShopsForm(request.GET)
