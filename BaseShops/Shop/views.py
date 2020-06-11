@@ -25,6 +25,7 @@ def ViewShops(request) -> render:
             shops.time_to_open = d['time_to_open']
             shops.time_to_close = d['time_to_close']
             Shop.save(shops)
+            f.close()
             return HttpResponse("<h2>Была создана запись {0}</h2>".format(shops.id))
     TimeNow = datetime.datetime.now().time()
     if 'search' in request.GET:
