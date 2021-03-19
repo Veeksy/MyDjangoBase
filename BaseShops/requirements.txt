@@ -6,7 +6,7 @@ click==7.1.2
 Django==3.0.4
 django-batch-select==0.2.4
 django-filter==2.2.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 environ==1.0
 Flask==1.1.2
 image==1.5.31
