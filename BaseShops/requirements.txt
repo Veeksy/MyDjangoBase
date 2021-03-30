@@ -3,7 +3,7 @@ automium==0.2.6
 automium-web==0.1.1
 city==0.1
 click==7.1.2
-Django==3.0.4
+Django==3.0.12
 django-batch-select==0.2.4
 django-filter==2.2.0
 djangorestframework==3.11.0
