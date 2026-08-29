@@ -20,6 +20,6 @@ psycopg2==2.8.5
 pygame==1.9.6
 pytz==2019.3
 six==1.14.0
-sqlparse==0.3.1
+sqlparse==0.6.0
 view==0.1
 Werkzeug==1.0.1
